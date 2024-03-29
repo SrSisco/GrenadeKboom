@@ -3,6 +3,7 @@
 
 ## About
 This plugin allows to "heat" the grenades (the countdown starts when you start the launch)
+
 EXILED VERSION: 8.8.0
 
 ## Default Config

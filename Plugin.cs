@@ -7,7 +7,7 @@ namespace GrenadeKboom
     {
         public override string Name => "GrenadeKboom";
         public override string Author => "srsisco";
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 1, 0);
 
         public static GrenadeKboom Instance;
         public EventHandler _handlers;
@@ -21,9 +21,9 @@ namespace GrenadeKboom
             _handlers = new EventHandler();
             
             Exiled.Events.Handlers.Player.ThrowingRequest += _handlers.OnThrowingRequest;
-            
+            Exiled.Events.Handlers.Player.Dying += _handlers.OnDying;
 
-            Log.Info("GrenadeKboom has been enabled.");
+            Log.Info("Spies has been enabled.");
             base.OnEnabled();
 
         }
@@ -31,13 +31,13 @@ namespace GrenadeKboom
         public override void OnDisabled()
         {
             Exiled.Events.Handlers.Player.ThrowingRequest -= _handlers.OnThrowingRequest;
-            
+            Exiled.Events.Handlers.Player.Dying -= _handlers.OnDying;
 
             _handlers = null;
 
             Instance = null;
 
-            Log.Info("GrenadeKboom has been disabled.");
+            Log.Info("Spies has been disabled.");
             base.OnDisabled();
         }
     }

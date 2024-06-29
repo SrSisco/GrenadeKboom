@@ -28,6 +28,7 @@ namespace GrenadeKboom
             if(ev.RequestType == ThrowRequest.CancelThrow && ev.Throwable is ExplosiveGrenade)
             {
                 Timing.KillCoroutines($"GrenadeTime{ev.Player.NetId}");
+                GranadaActiva[ev.Player].Destroy();
             }
 
             if (ev.RequestType == ThrowRequest.WeakThrow || ev.RequestType == ThrowRequest.FullForceThrow)
